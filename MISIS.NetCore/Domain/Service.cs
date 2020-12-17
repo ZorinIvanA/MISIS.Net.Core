@@ -16,6 +16,7 @@ namespace MISIS.NetCore.Domain
 
         public Flat[] GetFlats()
         {
+            //throw new NotImplementedException("Error");
             return _repository.GetFlats();
         }
     }

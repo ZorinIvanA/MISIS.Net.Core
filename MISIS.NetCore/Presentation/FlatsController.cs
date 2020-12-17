@@ -10,7 +10,7 @@ namespace MISIS.NetCore.Presentation
 {
     [Route("api/flats")]
     [ApiController]
-    public class FlatsController : ControllerBase
+    public class FlatsController : MisisControllerBase
     {
         private IService _servce;
 
@@ -21,6 +21,12 @@ namespace MISIS.NetCore.Presentation
 
         [HttpGet]
         public IActionResult Get()
+        {
+            return ExecuteLogic<Flat[]>();
+        }
+
+
+        protected override IActionResult DoTheLogic<T>()
         {
             return Ok(_servce.GetFlats());
         }
